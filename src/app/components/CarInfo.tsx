@@ -10,23 +10,29 @@ const CarInfo = (props: Props) => {
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <table className="min-w-full">
-                <thead className="bg-gray-800 text-white">
-                    <tr>
-                        <th className="px-4 py-2">ID</th>
-                        <th className="px-4 py-2">Make</th>
-                        <th className="px-4 py-2">Model</th>
-                        <th className="px-4 py-2">Year</th>
-                        <th className="px-4 py-2">Mileage</th>
-                        <th className="px-4 py-2">Price</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr className="bg-gray-100">
+                        <td className="px-4 py-2 font-bold">ID</td>
                         <td className="px-4 py-2">{car.id}</td>
+                    </tr>
+                    <tr className="bg-gray-200">
+                        <td className="px-4 py-2 font-bold">Make</td>
                         <td className="px-4 py-2">{car.make}</td>
+                    </tr>
+                    <tr className="bg-gray-100">
+                        <td className="px-4 py-2 font-bold">Model</td>
                         <td className="px-4 py-2">{car.model}</td>
+                    </tr>
+                    <tr className="bg-gray-200">
+                        <td className="px-4 py-2 font-bold">Year</td>
                         <td className="px-4 py-2">{car.year}</td>
+                    </tr>
+                    <tr className="bg-gray-100">
+                        <td className="px-4 py-2 font-bold">Mileage</td>
                         <td className="px-4 py-2">{car.mileage}</td>
+                    </tr>
+                    <tr className="bg-gray-200">
+                        <td className="px-4 py-2 font-bold">Price</td>
                         <td className="px-4 py-2">{car.price}</td>
                     </tr>
                 </tbody>
