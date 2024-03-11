@@ -12,10 +12,13 @@ async function fetchCar(id: number): Promise<Car> {
     return cars[id];
 }
 
-const OneCar = ({ params }: ParamsType) => {
+const OneCar = async ({ params }: ParamsType) => {
+    const fetchedCar : Promise<Car> = fetchCar(params.id);
+    const gottenCar : Car = await fetchedCar;
+
     return (
         <>
-            <CarInfo car={fetchCar(params.id)} />
+            <CarInfo car={gottenCar} />
         </>
     );
 };
