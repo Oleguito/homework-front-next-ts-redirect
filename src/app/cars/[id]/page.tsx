@@ -9,12 +9,12 @@ type ParamsType = {
 };
 
 async function fetchCar(id: number): Promise<Car> {
-    return cars[id];
+    return cars[id - 1];
 }
 
 const OneCar = async ({ params }: ParamsType) => {
-    const fetchedCar : Promise<Car> = fetchCar(params.id);
-    const gottenCar : Car = await fetchedCar;
+    const fetchedCar: Promise<Car> = fetchCar(params.id);
+    const gottenCar: Car = await fetchedCar;
 
     return (
         <>

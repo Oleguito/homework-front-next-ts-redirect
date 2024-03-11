@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import {
     ColumnDef,
     flexRender,
@@ -21,10 +23,6 @@ interface DataTableProps<TData, TValue> {
     data: TData[];
 }
 
-function handleCarsTableRowClick() {
-    console.log("handleCarsTableRowClick");
-}
-
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -34,6 +32,8 @@ export function DataTable<TData, TValue>({
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
+
+    const router = useRouter();
 
     return (
         <div className="rounded-md border">
@@ -63,7 +63,9 @@ export function DataTable<TData, TValue>({
                             <TableRow
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
-                                onClick={() => handleCarsTableRowClick()}
+                                onClick={() => {
+                                    router.push(`/cars/${Number(row.id) + 1}`);
+                                }}
                             >
                                 {row.getVisibleCells().map((cell) => (
                                     <TableCell key={cell.id}>
