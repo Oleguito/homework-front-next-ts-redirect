@@ -1,18 +1,9 @@
-import { Payment, columns } from "./columns";
+import { Car, columns } from "./columns";
 import { DataTable } from "./data-table";
+import { cars } from "../cars_data/carsData";
 
-async function getData(): Promise<Payment[]> {
-    // Fetch data from your API here.
-    return [
-        {
-            id: "728ed52f",
-            price: 100,
-            status: "pending",
-            make: "m@example.com",
-            year: 123,
-        },
-        // ...
-    ];
+async function getData(): Promise<Car[]> {
+    return cars;
 }
 
 export default async function DemoPage() {
