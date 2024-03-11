@@ -21,6 +21,10 @@ interface DataTableProps<TData, TValue> {
     data: TData[];
 }
 
+function handleCarsTableRowClick() {
+    console.log("handleCarsTableRowClick");
+}
+
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -59,6 +63,7 @@ export function DataTable<TData, TValue>({
                             <TableRow
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
+                                onClick={() => handleCarsTableRowClick()}
                             >
                                 {row.getVisibleCells().map((cell) => (
                                     <TableCell key={cell.id}>
